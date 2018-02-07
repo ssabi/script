@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<title>Scroll</title>
+
+<style>
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,textarea,button{margin:0;padding:0}
+fieldset,img{border:0 none}
+dl,ul,ol,menu,li{list-style:none}
+table{border-collapse:collapse;border-spacing:0;border:0 none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:"";content:none}
+input,select,textarea,button{vertical-align:middle}
+button{border:0 none;background-color:transparent;cursor:pointer}
+a{color:#333;text-decoration:none}
+a:active,a:hover{text-decoration:underline}
+address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
+html,body{height:100%}
+img{vertical-align:middle;max-width:100%}
+legend,.hide{width:1px;height:1px;line-height:0;position:absolute;left:-5000px;top:-5000px;z-index:-100;text-indent:-2000px}
+caption{font-size:0;width:0;height:0;line-height:0;text-indent:-9999px}
+*{-webkit-text-size-adjust:none;letter-spacing:-0.05em}
+input::-ms-clear{display:none}
+*, *:before, *:after{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+
+#wrap{max-width:1000px;margin:0 auto}
+
+.fold_box .fold_item{margin-top:10px}
+.fold_box .fold_item:first-child{margin-top:0}
+.fold_box .fold_item .tit a{display:block;height:42px;padding-left:28px;border:1px solid #d7d7d7;background:#fff url(https://www.skhynix.com/resource/images/common/bg_box_fold02.png) no-repeat 100% 1px;font-size:14px;font-weight:bold;color:#555;line-height:40px;cursor:pointer}
+.fold_box .fold_item .tit.on a{border:1px solid #ea5d4b;background:#ea5d4b url(https://www.skhynix.com/resource/images/common/bg_box_fold02.png) no-repeat 100% -41px;color:#fff}
+.fold_box .fold_item .cont{display:none;padding-top:22px}
+.fold_box .fold_item:first-child .cont{display:block}
+.fold_box .list_bullet{margin-top:-5px}
+.fold_box .fold_item dt{position:relative;margin-top:19px;font-size:14px;font-weight:bold;color:#121212;line-height:24px}
+.fold_box .fold_item dd{padding-top:12px}
+.sub_fold{position:relative;display:inline-block;margin-bottom:4px}
+.btn_fold{display:inline-block;vertical-align:middle;width:228px;height:29px;padding-left:14px;background:#898989 url(https://www.skhynix.com/resource/images/common/bg_box_fold03.png) no-repeat 100% 0;font-size:14px;font-weight:bold;color:#fff;line-height:29px}
+.btn_fold:hover, .btn_fold:focus{color:#fff}
+.sub_fold.on .btn_fold{background:#ce402e url(https://www.skhynix.com/resource/images/common/bg_box_fold03.png) no-repeat 100% -28px;color:#fff}
+.sub_fold .fold_cont{display:none;position:absolute;top:29px;left:0;width:228px;z-index:10;border:1px solid #c6c6c6;background-color:#fff}
+.sub_fold.on .fold_cont{display:block}
+.sub_fold em{display:inline-block;margin-left:5px;font-size:12px;color:#ea5d4b}
+.sub_fold li{position:relative;min-height:28px;font-size:12px;border-top:1px solid #c6c6c6;background-color:#fff;color:#767676}
+.sub_fold li:first-child{border-top:0 none}
+.sub_fold li span{color:#222}
+.sub_fold li a{display:block;padding:5px 35px 5px 10px;line-height:18px}
+.sub_fold li a img{position:absolute;top:50%;right:10px;margin-top:-8px}
+.fold_box .fold_item .fold_tbl span{display:block;padding:10px 0;font-size:13px;color:#555;line-height:20px}
+.fold_box .fold_item .sub_tit + .fold_tbl{margin-top:10px}
+.fold_box .fold_item .btn_close{display:block;height:30px;margin-top:27px;background-color:#b7b7b7;font-size:13px;font-weight:bold;color:#fff;text-align:center;line-height:30px}
+.fold_box .md_btn{vertical-align:middle;color:#555}
+.fold_box .txt_list + .md_btn{margin:10px 0 4px}
+</style>
+<script type="text/javascript" charset="utf-8" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<script>
+$(document).ready(function(){
+	/* 주주총회 아코디언 펼치기/접기 */
+	$(".fold_box .fold_item .tit").bind({
+		click:function(){
+			var $this = $(this);
+			$(".fold_box .fold_item .tit").not($(this)).removeClass("on");
+			$(this).toggleClass("on");
+			var cont = $(".fold_item .cont");
+			var dropdown = $(this).next(".cont");
+			cont.not(dropdown).slideUp('fast');
+			dropdown.slideToggle('fast', function(){
+				if($(this).is(":visible")){
+					var doc = $("html, body");
+					var top = $this.offset().top;
+					doc.stop().animate({scrollTop:(top - 58)}, 150);
+				}
+			});
+
+			return false;
+		}
+	});
+
+	/* 주주총회 아코디언 닫기 버튼 */
+	$(".fold_box .fold_item .btn_close").bind({
+		click:function(e){
+			e.preventDefault();
+
+			var $tit = $(this).closest(".fold_item").find(".tit");
+
+			$(".fold_box .fold_item .tit").removeClass("on");
+			//$(this).closest(".fold_item").find(".tit a").focus();
+			$(this).parent().slideUp('fast', function(){
+				if($(this).is(":hidden")){
+					var doc = $("html, body");
+					var top = $tit.offset().top;
+					doc.stop().animate({scrollTop:(top - 58)}, 150);
+				}
+			});
+			return false;
+		}
+	});
+});
+</script>
+</head>
+<body>
+<div id="wrap">
+	<div class="fold_box">
+		<div class="fold_item">
+			<h2 class="tit on"><a href="#">제69기</a></h2>
+			<div class="cont">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi atque vitae odio illo. Pariatur, rerum, dolor porro dignissimos in illo error a. Labore, rerum eaque commodi temporibus dolorum incidunt id!
+				<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, quidem, quaerat, ea repellendus maxime dicta fugiat aspernatur unde laudantium eligendi velit dolor sunt et itaque ad fugit ducimus? Asperiores, aliquid.
+
+				<a href="#" class="btn_close">닫기</a>
+			</div>
+		</div>
+		
+		<div class="fold_item">
+			<h2 class="tit"><a href="#">제68기</a></h2>
+			<div class="cont">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi atque vitae odio illo. Pariatur, rerum, dolor porro dignissimos in illo error a. Labore, rerum eaque commodi temporibus dolorum incidunt id!
+				<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, quidem, quaerat, ea repellendus maxime dicta fugiat aspernatur unde laudantium eligendi velit dolor sunt et itaque ad fugit ducimus? Asperiores, aliquid.
+
+				<a href="#" class="btn_close">닫기</a>
+			</div>
+		</div>
+
+		<div class="fold_item">
+			<h2 class="tit"><a href="#">제67기</a></h2>
+			<div class="cont">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi atque vitae odio illo. Pariatur, rerum, dolor porro dignissimos in illo error a. Labore, rerum eaque commodi temporibus dolorum incidunt id!
+				<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, quidem, quaerat, ea repellendus maxime dicta fugiat aspernatur unde laudantium eligendi velit dolor sunt et itaque ad fugit ducimus? Asperiores, aliquid.
+
+				<a href="#" class="btn_close">닫기</a>
+			</div>
+		</div>
+		<div class="fold_item">
+			<h2 class="tit"><a href="#">제66기</a></h2>
+			<div class="cont">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi atque vitae odio illo. Pariatur, rerum, dolor porro dignissimos in illo error a. Labore, rerum eaque commodi temporibus dolorum incidunt id!
+				<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, quidem, quaerat, ea repellendus maxime dicta fugiat aspernatur unde laudantium eligendi velit dolor sunt et itaque ad fugit ducimus? Asperiores, aliquid.
+
+				<a href="#" class="btn_close">닫기</a>
+			</div>
+		</div>
+		<div class="fold_item">
+			<h2 class="tit"><a href="#">제65기</a></h2>
+			<div class="cont">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi atque vitae odio illo. Pariatur, rerum, dolor porro dignissimos in illo error a. Labore, rerum eaque commodi temporibus dolorum incidunt id!
+				<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, quidem, quaerat, ea repellendus maxime dicta fugiat aspernatur unde laudantium eligendi velit dolor sunt et itaque ad fugit ducimus? Asperiores, aliquid.
+
+				<a href="#" class="btn_close">닫기</a>
+			</div>
+		</div>
+		<div class="fold_item">
+			<h2 class="tit"><a href="#">제64기</a></h2>
+			<div class="cont">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi atque vitae odio illo. Pariatur, rerum, dolor porro dignissimos in illo error a. Labore, rerum eaque commodi temporibus dolorum incidunt id!
+				<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, quidem, quaerat, ea repellendus maxime dicta fugiat aspernatur unde laudantium eligendi velit dolor sunt et itaque ad fugit ducimus? Asperiores, aliquid.
+
+				<a href="#" class="btn_close">닫기</a>
+			</div>
+		</div>
+		<div class="fold_item">
+			<h2 class="tit"><a href="#">제63기</a></h2>
+			<div class="cont">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi atque vitae odio illo. Pariatur, rerum, dolor porro dignissimos in illo error a. Labore, rerum eaque commodi temporibus dolorum incidunt id!
+				<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, quidem, quaerat, ea repellendus maxime dicta fugiat aspernatur unde laudantium eligendi velit dolor sunt et itaque ad fugit ducimus? Asperiores, aliquid.
+
+				<a href="#" class="btn_close">닫기</a>
+			</div>
+		</div>
+		<div class="fold_item">
+			<h2 class="tit"><a href="#">제62기</a></h2>
+			<div class="cont">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi atque vitae odio illo. Pariatur, rerum, dolor porro dignissimos in illo error a. Labore, rerum eaque commodi temporibus dolorum incidunt id!
+				<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, quidem, quaerat, ea repellendus maxime dicta fugiat aspernatur unde laudantium eligendi velit dolor sunt et itaque ad fugit ducimus? Asperiores, aliquid.
+
+				<a href="#" class="btn_close">닫기</a>
+			</div>
+		</div>
+		<div class="fold_item">
+			<h2 class="tit"><a href="#">제61기</a></h2>
+			<div class="cont">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi atque vitae odio illo. Pariatur, rerum, dolor porro dignissimos in illo error a. Labore, rerum eaque commodi temporibus dolorum incidunt id!
+				<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, quidem, quaerat, ea repellendus maxime dicta fugiat aspernatur unde laudantium eligendi velit dolor sunt et itaque ad fugit ducimus? Asperiores, aliquid.
+
+				<a href="#" class="btn_close">닫기</a>
+			</div>
+		</div>
+		<div class="fold_item">
+			<h2 class="tit"><a href="#">제60기</a></h2>
+			<div class="cont">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi atque vitae odio illo. Pariatur, rerum, dolor porro dignissimos in illo error a. Labore, rerum eaque commodi temporibus dolorum incidunt id!
+				<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, quidem, quaerat, ea repellendus maxime dicta fugiat aspernatur unde laudantium eligendi velit dolor sunt et itaque ad fugit ducimus? Asperiores, aliquid.
+
+				<a href="#" class="btn_close">닫기</a>
+			</div>
+		</div>
+		<div class="fold_item">
+			<h2 class="tit"><a href="#">제59기</a></h2>
+			<div class="cont">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi atque vitae odio illo. Pariatur, rerum, dolor porro dignissimos in illo error a. Labore, rerum eaque commodi temporibus dolorum incidunt id!
+				<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, quidem, quaerat, ea repellendus maxime dicta fugiat aspernatur unde laudantium eligendi velit dolor sunt et itaque ad fugit ducimus? Asperiores, aliquid.
+
+				<a href="#" class="btn_close">닫기</a>
+			</div>
+		</div>
+		<div class="fold_item">
+			<h2 class="tit"><a href="#">제58기</a></h2>
+			<div class="cont">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi atque vitae odio illo. Pariatur, rerum, dolor porro dignissimos in illo error a. Labore, rerum eaque commodi temporibus dolorum incidunt id!
+				<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, quidem, quaerat, ea repellendus maxime dicta fugiat aspernatur unde laudantium eligendi velit dolor sunt et itaque ad fugit ducimus? Asperiores, aliquid.
+
+				<a href="#" class="btn_close">닫기</a>
+			</div>
+		</div>
+		<div class="fold_item">
+			<h2 class="tit"><a href="#">제57기</a></h2>
+			<div class="cont">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi atque vitae odio illo. Pariatur, rerum, dolor porro dignissimos in illo error a. Labore, rerum eaque commodi temporibus dolorum incidunt id!
+				<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, quidem, quaerat, ea repellendus maxime dicta fugiat aspernatur unde laudantium eligendi velit dolor sunt et itaque ad fugit ducimus? Asperiores, aliquid.
+
+				<a href="#" class="btn_close">닫기</a>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

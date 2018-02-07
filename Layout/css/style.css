@@ -1,0 +1,240 @@
+﻿@charset "utf-8";
+@import url(common.css);
+
+/***** CONTAINER *****/
+.visual{min-width:1020px;height:256px}
+.visual > div{width:100%;max-width:1020px;margin:0 auto;padding-top:83px}
+.visual.csr{background:url(https://www.skhynix.com/resource/images/common/visual_csr.jpg) no-repeat 50% 0}
+.visual em{text-transform:uppercase;font-weight:200;font-size:45px;line-height:54px;color:#fff;font-family:"Exo 2", Malgun Gothic, "맑은 고딕", Dotum, "돋움", sans-serif; text-shadow:0 0 150px #ccc;}
+.visual em.em2{text-transform:none;display:block;font-weight:800;font-size:20px;line-height:20px;margin:0 0 0 2px;}
+.visual p{margin-top:6px;font-size:14px;line-height:22px;letter-spacing:-0.025em;color:#fff}
+.visual p span{display:block}
+
+/* BreadCrumb */
+.breadcrumb{height:48px;margin:0;padding:0;position:relative}
+.breadcrumb a{white-space:nowrap}
+.breadcrumb .bc_box{position:absolute;top:0;left:0;width:100%;height:48px;background-color:#eaeaea}
+.breadcrumb .bc_box>div{position:relative;width:100%;max-width:1020px;margin:0 auto}
+.breadcrumb .bc_box.fixed{position:fixed;top:0;z-index:11}
+.breadcrumb .bc_box ul li{position:relative}
+.breadcrumb .bc_box .path{float:left}
+.breadcrumb .bc_box .path .point{background:url(https://www.skhynix.com/resource/images/common/bg_sub_path.png) no-repeat right 1px}
+.breadcrumb .bc_box .path > li{position:relative;float:left;line-height:48px;margin-left:15px;padding-left:19px;background:url(https://www.skhynix.com/resource/images/common/bg_bcrb.png) no-repeat -194px 21px}
+.breadcrumb .bc_box .path > li > a{display:inline-block;padding-right:35px;background:url(https://www.skhynix.com/resource/images/common/bg_bcrb.png) no-repeat right -34px;font-size:14px;color:#333;line-height:48px}
+.breadcrumb .bc_box .path > li.on > a,
+.breadcrumb .bc_box .path > li > a:focus,
+.breadcrumb .bc_box .path > li > a:hover{background-position:right -134px;text-decoration:underline}
+.breadcrumb .bc_box .path > li > a img{vertical-align:0}
+.breadcrumb .bc_box .path > li:first-child{margin-left:0;padding-left:0;background-image:none}
+.breadcrumb .bc_box .path > li:first-child > a{width:14px;line-height:48px;padding-right:0;background-position:0 16px;text-indent:-9999px}
+.breadcrumb .bc_box .path > li:first-child > a:hover, .breadcrumb .bc_box .path > li:first-child > a:focus{background-position:0 16px}
+.breadcrumb .bc_box .path .sub_path{display:none;position:absolute;top:40px;left:18px;z-index:30;padding-top:7px}
+.breadcrumb .bc_box .path .sub_path.show,.breadcrumb .bc_box .path .low_path.show
+.breadcrumb .bc_box .path > li.on .sub_path,.breadcrumb .bc_box .path > li:hover .sub_path{display:block}
+.breadcrumb .bc_box .path .sub_path .pointer{position:absolute;top:0;left:17px;width:15px;height:8px;background:url(https://www.skhynix.com/resource/images/common/box_arrow.png) no-repeat 0 0}
+.breadcrumb .bc_box .path .sub_path ul{background-color:#fff;border:1px solid #e1e1e1}
+.breadcrumb .bc_box .path .sub_path ul li{position:relative;border-top:1px solid #e1e1e1}
+.breadcrumb .bc_box .path .sub_path ul li:first-child{border-top:0 none}
+.breadcrumb .bc_box .path .sub_path ul li > a{display:block;min-width:147px;height:29px;padding:0 30px 0 14px;font-size:13px;color:#555;line-height:29px}
+.breadcrumb .bc_box .path .sub_path ul li.on > a ,
+.breadcrumb .bc_box .path .sub_path ul li > a:focus,
+.breadcrumb .bc_box .path .sub_path ul li > a:hover{background-position:right -29px;background-color:#efefef;font-weight:bold;color:#ce402e}
+.breadcrumb .bc_box .path .sub_path ul li > a.low_none{background-image:none}
+.breadcrumb .bc_box .path .low_path{}
+.breadcrumb .bc_box .path .low_path{display:none;position:absolute;left:100%;top:-1px;background-color:#fff;min-width:149px}
+.breadcrumb .bc_box .path .low_path li > a{display:block;height:25px;padding-left:22px;font-size:12px;color:#555;line-height:25px}
+.breadcrumb .bc_box .path .low_path li > a:focus,
+.breadcrumb .bc_box .path .low_path li > a:hover{background-position:right -29px;background-color:#efefef;color:#ce402e}
+.breadcrumb .bc_box .path .low_path2{display:none;position:absolute;left:100%;top:-1px;background-color:#fff;min-width:149px}
+.breadcrumb .bc_box .path .low_path2 li > a{display:block;height:25px;padding-left:22px;font-size:12px;color:#555;line-height:25px}
+.breadcrumb .bc_box .path .low_path2 li > a:focus,
+.breadcrumb .bc_box .path .low_path2 li > a:hover{background-color:#efefef;color:#ce402e}
+.breadcrumb .bc_box .path .low_path3{display:none;position:absolute;left:100%;top:-1px;background-color:#fff;min-width:149px}
+.breadcrumb .bc_box .path .low_path3 li > a{display:block;height:25px;padding-left:22px;font-size:12px;color:#555;line-height:25px}
+.breadcrumb .bc_box .path .low_path3 li > a:focus,
+.breadcrumb .bc_box .path .low_path3 li > a:hover{background-color:#efefef;color:#ce402e}
+.breadcrumb .bc_box .brc_sub{position:absolute;top:0;right:0}
+.breadcrumb .bc_box .brc_sub li{float:left;margin-left:1px}
+.breadcrumb .bc_box .brc_sub li:first-child{margin-left:0}
+.breadcrumb .bc_box .btn_top{display:none;/*position:absolute;top:0;right:-49px*/position:fixed;top:0;left:50%;margin-left:511px}
+
+/* Scroll Navi */
+.navi_box *, .navi_box *:before, .navi_box *:after{
+	-webkit-box-sizing:content-box !important;
+	-moz-box-sizing:content-box !important;
+	box-sizing:content-box !important;
+}
+.scroll_navi{position:relative;padding-top:51px;width:100%;z-index:10}
+.scroll_navi .fixed{position:fixed;top:0;margin-top:0;background-color:#fff}
+.scroll_navi.off{padding-top:0}
+.scroll_navi.row02{padding-top:101px}
+.scroll_navi.row02 .navi_box{height:101px}
+.scroll_navi.row02 .navi_box ul{background:#fff url(https://www.skhynix.com/resource/images/common/bg1x1_gray.gif) repeat-y}
+.scroll_navi.row02 .navi_box.fixed{height:111px}
+.scroll_navi.row02 .navi li.on a{height:34px !important}
+.scroll_navi.row02 .navi{overflow:hidden;height:auto !important}
+.navi_box{position:absolute;left:0;top:0;width:100%;height:51px;background-color:#fff;z-index:20}
+.navi_box.fixed{height:61px}
+.navi_box ul{width:100%;max-width:1020px;margin:0 auto}
+.navi{padding:0;height:50px;border-bottom:1px solid #858585}
+.navi li{float:left;text-align:center;font-size:14px;font-weight:bold;color:#333;letter-spacing:-0.01em}
+.navi li a{display:block;height:35px;padding-top:14px;border:1px solid #ddd;border-right:1px solid #ccc;border-left:0;border-bottom:0}
+.navi li:first-child{}
+.navi li:first-child a{border-left:1px solid #ccc}
+.navi li.on{position:relative;z-index:10}
+.navi li.on a{color:#fff;border:1px solid #ea5d4b;border-top-left-radius:2px;border-top-right-radius:2px;background-color:#ea5d4b}
+.ir .scroll_navi{padding-top:0}
+.ir .navi_box{position:static}
+.close_inbox{display:none}
+.inbox .h3 + .responsive-table,.inbox .h3 + .no_responsible{margin-top:7px}
+.inbox .img{margin-top:36px}
+.inbox .img img,.max_full{max-width:100%}
+img.full{width:100%}
+.inbox .img + .h3,.inbox .responsive-table + .h3{margin-top:36px}
+.inbox .info_wrap{margin-top:-20px;margin-bottom:35px}
+.inbox p em{font-weight:bold}
+
+.col6 li{width:16.66%}
+.col5 li{width:20%}
+.col4 li{width:25%}
+.col3 li{width:33.33%}
+.col2 li{width:50%}
+
+/* sub page */
+.title_box{width:1020px;margin:0 auto;/*padding:58px 150px 47px 150px;*/padding:58px 50px 47px;text-align:center}
+.title_box.no_padding{padding-right:0;padding-left:0}
+.title_box.padding_more{padding:58px 85px 47px}
+.title_box h1{margin:0 0 2px}
+.title_box .tit_desc{padding-top:26px}
+.title_box.line + .scroll_newvi{padding-top:0}
+.title_box.line + .contents_wrap > .inbox:first-child{padding-top:30px}
+.title_box h1 sub{display:inline-block;vertical-align:middle;font-size:20px}
+.line{border-bottom:1px solid #ddd}
+.inbox.line + .inbox{padding-top:30px}
+img.border{border:1px solid #ddd}
+
+.scr_boxs .scr_box, .contents_wrap, .scr_boxs .history_con, .scr_boxs .envi_result,.board_box{position:relative;width:100%;max-width:1020px;margin:0 auto}
+.contents_wrap{background:#fff}
+.scr_boxs .scr_box, .scr_boxs .history_con{padding-top:60px}
+.scr_boxs .scr_box h2, .scr_boxs .history_con h2, .scr_boxs .envi_result h2{/*height:51px;line-height:51px;*/padding-top:8px;margin:0 0 30px 0;background:url(https://www.skhynix.com/resource/images/common/bar_tit_orange.gif) no-repeat 0 0}
+
+.tab_con{padding-top:30px;overflow:hidden}
+.tab_con.pdb_60{padding-bottom:60px}
+
+@media all and (max-width:1024px){
+	#wrap{overflow:hidden}
+	.shortcut .insc{width:auto;padding:0 15px}
+}
+@media all and (max-width:1023px){
+	.visual.csr{background:url(https://www.skhynix.com/resource/images/common/visual_csr.jpg) no-repeat 50% 0;background-size:cover}
+
+	body{overflow-y:scroll}
+	img{max-width:100%}
+
+	.h2{width:auto}
+
+	.tit_desc_box{padding:34px 15px 27px}
+	.tit_desc_box.pb0{padding-bottom:27px}
+
+	/* layout */
+	#wrap{overflow:hidden;min-width:0}
+	#header{display:none}
+	#container{padding-top:50px}
+	#container .visual{/*display:none*/min-width:0;width:100%}
+	#container .visual > div{padding-left:15px;padding-right:15px}
+	#container .breadcrumb{/*visibility:hidden*/display:none}
+	#content{padding-bottom:30px;background-color:#f6f6f7}
+
+	.col-sd-1+.col-sd-1, .col-sd-2+.col-sd-2, .col-sd-3+.col-sd-3, .col-sd-4+.col-sd-4, .col-sd-5+.col-sd-5, .col-sd-6+.col-sd-6, .col-sd-7+.col-sd-7, .col-sd-8+.col-sd-8, .col-sd-9+.col-sd-9, .col-sd-10+.col-sd-10, .col-sd-11+.col-sd-11, .col-sd-12+.col-sd-12{margin-top:20px}
+
+	.col-xs-1+.col-xs-1, .col-xs-2+.col-xs-2, .col-xs-3+.col-xs-3, .col-xs-4+.col-xs-4, .col-xs-5+.col-xs-5, .col-xs-6+.col-xs-6, .col-xs-7+.col-xs-7, .col-xs-8+.col-xs-8, .col-xs-9+.col-xs-9, .col-xs-10+.col-xs-10, .col-xs-11+.col-xs-11, .col-xs-12+.col-xs-12{margin-top:0px}
+
+	.inbox{/*overflow:hidden;*/padding:12px 15px 10px}
+	.tab_con.pdb_60{padding-bottom:0}
+
+	.shortcut .insc{width:100%;padding:0}
+	.shortcut .insc .row{margin:0}
+	.shortcut .insc .row > div{height:auto;padding-bottom:10px}
+	.shortcut .insc .row > div.line{border-right:0;border-bottom:0}
+	.shortcut .insc ul{display:inline-block}
+	.shortcut .insc .visit{margin-left:10px;vertical-align:top}
+
+	#footer{background-color:#818181}
+	#footer .infoot{width:100%;height:auto;padding:65px 15px 19px 15px}
+	#footer .infoot .address{display:block;height:auto;margin:0;font-size:12px;font-weight:normal;color:#fff;line-height:18px}
+	#footer .infoot .copy{display:block;height:auto;margin-top:7px;font-size:12px;color:#fff;line-height:18px}
+	#footer .infoot .foot_mark{position:absolute;top:15px;left:15px}
+	#footer .infoot .foot_mark li{float:left;height:38px;margin-left:0;line-height:38px}
+	/* //layout */
+
+	.title_box{width:100%;padding:30px 15px 18px 15px !important;border-bottom:0 !important;background-color:#f6f6f7}
+	.title_box h1{}
+	.title_box .tit_desc{padding-top:11px;font-size:13px;line-height:20px;color:#555}
+	.title_box .tit_down{padding-top:6px}
+	.title_box .tit_down em{display:block;font-size:12px;color:#333;line-height:20px}
+	.title_box .tit_down span{display:block;font-size:12px;color:#ea5d4b;line-height:18px}
+	.title_box .tit_down ul{overflow:hidden;margin-top:5px}
+	.title_box .tit_down li{float:left;width:103px;height:26px;margin-left:5px}
+	.title_box .tit_down li:first-child{margin-left:0}
+	.title_box .tit_down li a{display:block;height:26px;background-color:#7d818b;font-size:12px;color:#fff;line-height:26px;text-align:center}
+
+	.scr_boxs .scr_box{padding-top:0}
+	.scr_boxs .history_con{padding-top:30px}
+	.scr_boxs .scr_box h2{display:block;min-height:40px;margin:0;padding:8px 30px 7px 15px;border-bottom:1px solid #edecec;background:url(https://www.skhynix.com/resource/images/common/bg_box_fold_minus.gif) no-repeat 100% 50%;font-size:16px;font-weight:bold;color:#ce402e;line-height:24px;cursor:pointer}
+	.scr_boxs .scr_box.off h2{color:#333;background:url(https://www.skhynix.com/resource/images/common/bg_box_fold_plus.gif) no-repeat 100% 50%}
+	.scr_boxs .scr_box h2 + div{/*display:none;*/border-bottom:1px solid #edecec}
+	.scr_boxs .bg_gray{background-color:#fff}
+	.scr_boxs .bg_gray.pdb40, .scr_boxs .bg_gray.pdb86{padding-bottom:0 !important}
+	.scr_boxs .scr_box .md_btn{position:static}
+
+	.scroll_navi,.scroll_navi.row02{padding-top:0}
+	.scroll_navi .navi_box{visibility:hidden}
+
+	.close_inbox{display:block;margin:20px 0 0;font-size:13px;line-height:100%;letter-spacing:-0.05em;color:#767676;background-color:#edecec;text-align:center}
+	.close_inbox a{display:block;padding-top:8px;height:32px}
+
+	.mt_v{display:block}
+	.m_lmenu{display:block}
+}
+
+@media all and (max-width:767px){
+	#container .visual{/*display:none*/height:150px}
+	#container .visual > div{padding:20px 30px 0 15px;}
+	#container .visual p{display:none}
+
+	.col-sm-1+.col-sm-1, .col-sm-2+.col-sm-2, .col-sm-3+.col-sm-3, .col-sm-4+.col-sm-4, .col-sm-5+.col-sm-5, .col-sm-6+.col-sm-6, .col-sm-7+.col-sm-7, .col-sm-8+.col-sm-8, .col-sm-9+.col-sm-9, .col-sm-10+.col-sm-10, .col-sm-11+.col-sm-11, .col-sm-12+.col-sm-12{margin-top:20px}
+	
+	.col-xs-1+.col-xs-1, .col-xs-2+.col-xs-2, .col-xs-3+.col-xs-3, .col-xs-4+.col-xs-4, .col-xs-5+.col-xs-5, .col-xs-6+.col-xs-6, .col-xs-7+.col-xs-7, .col-xs-8+.col-xs-8, .col-xs-9+.col-xs-9, .col-xs-10+.col-xs-10, .col-xs-11+.col-xs-11, .col-xs-12+.col-xs-12{margin-top:0px}
+	
+	.tab_basic{position:relative}
+	.tab_basic .sel_txt{display:block;height:30px;line-height:30px;border:1px solid #c4c4c4;border-radius:1px;padding:0 25px 0 10px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;cursor:pointer;background:url(https://www.skhynix.com/resource/images/common/bg_sel_arrow.png) no-repeat right center;font-weight:bold}
+	.tab_basic ul{display:none;position:absolute;left:0;top:30px;clear:both;width:100%;overflow:hidden;z-index:10;border:1px solid #c4c4c4;border-width:1px 0 1px;background-color:#fff}
+	.tab_basic li{float:none;margin-left:0;padding:0;font-weight:bold;border:1px solid #c4c4c4;border-width:0 1px;letter-spacing:-0.075em;line-height:17px;background:none}
+	.tab_basic li a{display:block;padding:4px 10px;line-height:20px;background-color:#fff;border:0}
+	.tab_basic li.on a{color:#cd1801;border-bottom:0;background-color:#f2f1f1}
+	.tab_basic li a:hover, .tab_basic li a:focus{background-color:#f2f1f1}
+
+	.tab_con{display:none}
+	.tab_con.show{display:block}
+
+	.title_box{width:100%;padding-top:28px;text-align:left}
+	.title_box h1{font-size:26px;line-height:30px;font-weight:normal}
+	.title_box h1 strong{display:block;padding-left:0;min-height:0;background:none !important}
+	.title_box h1 strong span{display:none}
+	.title_box .tit_desc{padding-top:11px;font-size:13px;line-height:20px;color:#555}
+
+	.shortcut .insc .row > div{padding:0}
+	.shortcut .insc strong{display:block;height:30px;margin:0;padding-left:15px;border-top:1px solid #818181;background:#a5a5a5;font-size:14px;font-weight:bold;color:#fff;line-height:30px}
+	.shortcut .insc strong + div{padding:14px 15px 22px}
+	.shortcut .insc strong.sc_tit{overflow:hidden;cursor:pointer;background:#a5a5a5 url(https://www.skhynix.com/resource/images/common/bg_shortcut_fold.png) no-repeat right 11px}
+	.shortcut .insc strong.sc_tit.on{background-position:right -14px}
+	.shortcut .insc strong.sc_tit + div{display:none}
+	.shortcut .insc strong.sc_tit + div ul{width:100%}
+	.shortcut .insc ul{margin-bottom:0}
+	.shortcut .insc .visit{vertical-align:top;margin:14px 0 3px 0}
+
+	a.outlink{word-break:break-all}
+}
+@media all and (max-width:480px){
+	.visual.csr{background:url(https://www.skhynix.com/resource/images/common/visual_csr.jpg) no-repeat 63% 0;background-size:cover}
+}

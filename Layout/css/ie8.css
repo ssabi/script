@@ -1,0 +1,32 @@
+body, input, select, textarea{font-family:Malgun Gothic, "맑은 고딕"}
+.h1, .h2{font-family:"Nanum Gothic"}
+.gnb_ul>li, .subdepth .sub_tit, .visual em, .sitemap_sec em, .slide_con strong, .mtit_area h2{font-family:"Roboto"}
+
+body{overflow-y:scroll}
+
+.mt_v .mctr{background:url(https://www.skhynix.com/resource/images/common/mctr.png) no-repeat left top}
+.mt_v .mlogo{background:url(https://www.skhynix.com/resource/images/common/mlogo.png) no-repeat left top}
+.msch > a{background:url(https://www.skhynix.com/resource/images/common/msch.png) no-repeat 4px 5px}
+.mlan > a{background:url(https://www.skhynix.com/resource/images/common/mlan.png) no-repeat 4px 5px}
+.sel_close{background:#858585 url(/resource/images/common/mshc_close.png) no-repeat 10px 10px}
+.sch_close{background:#858585 url(/resource/images/common/mshc_close.png) no-repeat 10px 10px}
+.msch_submit{background:url(https://www.skhynix.com/resource/images/common/msubmit.png) no-repeat 0 0 !important}
+
+.left_menu li span{background:url(https://www.skhynix.com/resource/images/common/plus_b.png) no-repeat 0 0}
+.left_menu li.on span, .left_menu li.active span{background:url(https://www.skhynix.com/resource/images/common/minus_b.png) no-repeat 0 0}
+.mdepth2>ul>li>a>span{background:url(https://www.skhynix.com/resource/images/common/plus_s.png) no-repeat 0 0 !important}
+.mdepth2>ul>li.on>a>span, .mdepth2>ul>li.active>a>span{background:url(https://www.skhynix.com/resource/images/common/minus_s.png) no-repeat 0 0 !important}
+.mdepth3 ul li a>span{background:url(https://www.skhynix.com/resource/images/common/minus_xs.png) no-repeat 0 0 !important}
+
+.scr_boxs .scr_box h2{min-height:25px !important;zoom:1}
+.ir .fold_box .fold_item{margin-top:0;padding-top:10px}
+.ir .fold_box .fold_item .tit a{min-height:27px !important}
+.ir .fold_box .fold_item .btn_close, .aside_main .ir_contact{display:inline-block;width:100%;zoom:1}
+
+.qlink_wrap{
+	background:#ea5d4b;
+	/*
+	투명도 적용 시 
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#85ea5d4b,endColorstr=#85ea5d4b);
+	*/
+}
