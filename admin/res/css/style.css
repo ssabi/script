@@ -1,0 +1,138 @@
+@charset "UTF-8";
+/*
+@font-face{
+	font-family:'Arita';
+	font-style:normal;
+	font-weight:200;
+	src:url('../font/Arita-Thin.eot');
+	src:url('../font/Arita-Thin.eot?#iefix') format('embedded-opentype'), url('../font/Arita-Thin.woff') format('woff'), url('../font/Arita-Thin.ttf') format('truetype');
+}
+@font-face{
+	font-family:'Arita';
+	font-style:normal;
+	font-weight:300;
+	src:url('../font/Arita-Light.eot');
+	src:url('../font/Arita-Light.eot?#iefix') format('embedded-opentype'), url('../font/Arita-Light.woff') format('woff'), url('../font/Arita-Light.ttf') format('truetype');
+}
+*/
+@font-face{
+	font-family:'Arita';
+	font-style:normal;
+	font-weight:400;
+	src:url('../font/Arita-Medium.eot');
+	src:url('../font/Arita-Medium.eot?#iefix') format('embedded-opentype'), url('../font/Arita-Medium.woff') format('woff'), url('../font/Arita-Medium.ttf') format('truetype');
+}
+/*
+@font-face{
+	font-family:'Arita';
+	font-style:normal;
+	font-weight:600;
+	src:url('../font/Arita-SemiBold.eot');
+	src:url('../font/Arita-SemiBold.eot?#iefix') format('embedded-opentype'), url('../font/Arita-SemiBold.woff') format('woff'), url('../font/Arita-SemiBold.ttf') format('truetype');
+}
+*/
+@font-face{
+	font-family:'Arita_Bold';
+	font-style:normal;
+	font-weight:700;
+	src:url('../font/Arita-Bold.eot');
+	src:url('../font/Arita-Bold.eot?#iefix') format('embedded-opentype'), url('../font/Arita-Bold.woff') format('woff'), url('../font/Arita-Bold.ttf') format('truetype');
+}
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,textarea,button{margin:0;padding:0}
+fieldset,img{border:0 none}
+dl,ul,ol,menu,li{list-style:none}
+table{border-collapse:collapse;border-spacing:0;border:0 none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}
+input,select,textarea,button{vertical-align:middle}
+button{border:0 none;background-color:transparent;cursor:pointer}
+a{color:#333;text-decoration:none}
+a:active,a:hover{text-decoration:underline}
+address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
+html,body{height:100%}
+img{vertical-align:middle}
+legend,.hide{width:1px;height:1px;line-height:0;position:absolute;left:-5000px;top:-5000px;z-index:-100;text-indent:-2000px}
+legend{*display:none}
+caption{font-size:0;width:0;height:0;line-height:0;text-indent:-9999px}
+*{-webkit-text-size-adjust:none}
+*,*:before,*:after{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+input::-ms-clear{display:none}
+::-webkit-input-placeholder{color:#cecece}
+::-moz-placeholder{color:#cecece}
+:-ms-input-placeholder{color:#cecece}
+:-moz-placeholder{color:#cecece}
+
+body{font-size:16px;line-height:1.2;font-family:'Arita', Malgun Gothic, '맑은고딕', Sans-Serif}
+input, textarea, select, button{font-size:16px;line-height:1.2;font-family:'Arita', Malgun Gothic, '맑은고딕', Sans-Serif}
+
+/* Button */
+.btn{border:2px solid #2cc7a5;border-radius:3px;height:38px;text-align:center}
+.btn span{display:block;position:relative;padding:0 8px;line-height:34px;font-size:14px;color:#2cc7a5}
+
+/* Layout */
+#wrap{min-width:1080px;height:100%}
+#header{height:97px;border-bottom:1px solid #2cc7a5}
+#container{}
+#content{width:1080px;margin:0 auto;padding:46px 10px 100px}
+#login_wrap{position:relative;min-height:560px;height:100%;margin-bottom:-75px}
+#login_wrap:after{content:'';display:block;height:100px}
+#footer{height:75px}
+
+/* Footer */
+.copy{padding-top:3px;text-align:center;font-size:12px;color:#999;text-transform:uppercase}
+
+/* Header */
+.inhead{position:relative;width:1080px;margin:0 auto}
+.inhead .logo{position:absolute;left:5px;top:27px;z-index:10}
+.inhead .logo span{display:inline-block;overflow:hidden;width:81px;height:38px;background:url(../img/logo_81x38.png) no-repeat left top;text-indent:-9999px}
+.inhead .tit{display:block;padding-top:34px;text-align:center;font-size:24px;line-height:30px;color:#111}
+
+/* Login */
+.login{width:390px;height:357px;position:absolute;left:50%;top:50%;margin:-241px 0 0 -195px}
+.login .logo{display:block;text-align:center}
+.login .logo span{display:inline-block;overflow:hidden;width:112px;height:53px;background:url(../img/logo_112x53.png) no-repeat left top;text-indent:-9999px}
+.login .desc{margin-top:18px;font-size:24px;color:#111;text-align:center}
+.login_frm{margin-top:57px}
+.login_frm p{position:relative;padding:0 20px 0 55px;background-color:#f5f5f5;border-radius:2px}
+.login_frm p:before{content:"";display:block;position:absolute;left:20px;top:50%;margin-top:-10px;width:18px;height:20px}
+.login_frm p.id:before{background:url(../img/id.png) no-repeat left top}
+.login_frm p.pwd:before{background:url(../img/pwd.png) no-repeat left top}
+.login_frm p input{width:100%;height:58px;border:0;background-color:transparent;vertical-align:top}
+.login_frm .btn_submit{display:block;width:100%;height:58px;border:2px solid #2cc7a5;border-radius:4px;background-color:#fff;text-align:center;font-weight:bold}
+.login_frm .btn_submit span{display:block;position:relative;line-height:54px;font-size:18px;color:#2cc7a5}
+.login_frm p + p{margin-top:8px}
+.login_frm p + .btn_submit{margin-top:10px}
+
+/* List */
+.tbl_info{display:inline-block;width:100%;vertical-align:middle}
+.tbl_info .result{float:left;padding-top:8px;font-size:18px;color:#222}
+.tbl_info .opt{float:right}
+.tbl_info .opt button, .tbl_info .opt select{float:left}
+.tbl_info .opt button + select{margin-left:5px}
+.tbl_info .opt select{padding:0 10px;min-width:82px;height:38px;border:0;border-radius:3px;background-color:#f2f2f2;color:#333;background:#f6f6f6 url(../img/arrow18x6.png) no-repeat right center;-webkit-appearance:none;-moz-appearance:none;appearance:none}
+.tbl_info .opt select::-ms-expand{display:none}
+
+.tbl_info + .tbl_wrap{margin-top:10px}
+
+.tbl_wrap{overflow:hidden;border-top:1px solid #666;border-bottom:1px solid #d5d5d5}
+.tbl_wrap .tbl{width:100%;table-layout:fixed;font-size:14px;text-align:center}
+.tbl_wrap .tbl thead th{height:55px;font-weight:bold;font-size:17px;line-height:20px;color:#000;text-align:center;border-left:1px solid #efefef;border-bottom:1px solid #d5d5d5}
+.tbl_wrap .tbl thead th:first-child{border-left:0}
+.tbl_wrap .tbl tbody td{padding:9px 5px 10px;line-height:20px;color:#666;border-left:1px solid #efefef;border-top:1px solid #efefef}
+.tbl_wrap .tbl tbody td:first-child{border-left:0}
+.tbl_wrap .tbl tbody tr:first-child td{border-top:0}
+
+/* Pagination */
+.paginate{overflow:hidden;margin-top:30px}
+.paginate>div{position:relative;float:right;left:-50%}
+.paginate a, .paginate span{position:relative;float:left;left:50%}
+.paginate a{display:inline-block;width:30px;height:30px;vertical-align:middle}
+.paginate .first, .paginate .prev, .paginate .next, .paginate .last{border:2px solid #2cc7a5;border-radius:3px}
+.paginate .first{background:#fff url(../img/page_first.png) no-repeat center center}
+.paginate .prev{margin-left:4px;background:#fff url(../img/page_prev.png) no-repeat center center}
+.paginate .next{margin-right:4px;background:#fff url(../img/page_next.png) no-repeat center center}
+.paginate .last{background:#fff url(../img/page_last.png) no-repeat center center}
+.paginate span{padding:0 11px 0 12px}
+.paginate span a{position:static;left:0;width:auto;min-width:30px;margin:0 9px 0 8px;line-height:30px;color:#4c4c4c;text-align:center}
+.paginate span a.on{/* font-weight:bold; */color:#2cc7a5;font-family:'Arita_Bold', Malgun Gothic, '맑은고딕', Sans-Serif}
